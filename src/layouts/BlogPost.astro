@@ -7,26 +7,17 @@ import FormattedDate from "../components/FormattedDate.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate } = Astro.props;
 ---
-// This is the blog post layout. It frames the article with a fullbleed main, adds the title and hero image at the top
+<!-- This is the blog post layout. It frames the article with a fullbleed main, adds the title and hero image at the top -->
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
-    
   </head>
-
   <body>
     <Header />
     <main>
       <article>
-        <div class="hero-image">
-          {
-            heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
-            )
-          }
-        </div>
         <div class="prose">
           <div class="title">
             <div class="date">
