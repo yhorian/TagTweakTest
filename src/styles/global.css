@@ -53,12 +53,10 @@
     }
 
     main > .breakout {
-        @apply bg-blue-500;
         grid-column: breakout;
     }
 
     main > .full-width {
-        @apply bg-blue-800;
         grid-column: full-width;
         display: grid;
         grid-template-columns: inherit;
@@ -72,15 +70,6 @@
 
     .flow>*+* {
         margin-top: var(--flow-spacing, 1em);
-    }
-
-    .body-bg {
-        @apply text-zinc-700;
-    }
-
-    .dark-body-bg {
-        @apply text-white;
-        text-shadow: 0 0 2px;
     }
 
     a:active,
@@ -109,4 +98,6 @@
 
 body {
     font-family: 'Atkinson', sans-serif;
+    @apply bg-ttt-grey dark:bg-slate-800;
+    @apply text-stone-800 dark:text-white;
 }
