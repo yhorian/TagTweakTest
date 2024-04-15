@@ -1,44 +1,50 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
 ---
 
 <header>
-	<nav class="bg-ttt-orange">
-		<h2 class="self-start"><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links ">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-		</div>
-	</nav>
+  <nav class="bg-ttt-orange">
+    <!-- <svg viewBox="0 0 1440 690" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150 absolute -z-10 max-w-full ">
+			<path d="M 0,700 L 0,105 C 57.872895912057714,118.14531088972862 115.74579182411543,131.29062177945724 180,127 C 244.25420817588457,122.70937822054277 314.889728615596,100.98282377189969 393,101 C 471.110271384404,101.01717622810031 556.6952937135004,122.778083132944 620,129 C 683.3047062864996,135.221916867056 724.329096530402,125.90484369632426 796,109 C 867.670903469598,92.09515630367574 969.9883201648918,67.60254208175886 1048,78 C 1126.0116798351082,88.39745791824114 1179.7176228100307,133.68498797664031 1241,144 C 1302.2823771899693,154.31501202335969 1371.1411885949847,129.65750601167986 1440,105 L 1440,700 L 0,700 Z" stroke="none" stroke-width="0" fill="#e68c3a" fill-opacity="0.265" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 350)">
+				</path>
+			<path d="M 0,700 L 0,245 C 45.18103744417725,230.5341806939196 90.3620748883545,216.06836138783925 169,230 C 247.6379251116455,243.93163861216075 359.73273789075927,286.26073514256274 436,290 C 512.2672621092407,293.73926485743726 552.7069735486086,258.88869804190995 617,251 C 681.2930264513914,243.11130195809002 769.4393679148059,262.18447268979736 837,271 C 904.5606320851941,279.81552731020264 951.5355547921677,278.3734111989007 1024,264 C 1096.4644452078323,249.62658880109927 1194.4184129165237,222.32188251459976 1268,217 C 1341.5815870834763,211.67811748540024 1390.7907935417381,228.3390587427001 1440,245 L 1440,700 L 0,700 Z" stroke="none" stroke-width="0" fill="#e68c3a" fill-opacity="0.4" class="transition-all duration-300 ease-in-out delay-150 path-1" transform="rotate(-180 720 350)">
+				</path>
+			<path d="M 0,700 L 0,385 C 71.90656131913434,418.4819649604947 143.81312263826868,451.96392992098936 214,434 C 284.1868773617313,416.03607007901064 352.6540707660597,346.62624527653725 412,336 C 471.3459292339403,325.37375472346275 521.5705942974923,373.5310889728616 592,385 C 662.4294057025077,396.4689110271384 753.063552043971,371.2493988320165 825,358 C 896.936447956029,344.7506011679835 950.1751975266232,343.47131569907253 1020,351 C 1089.8248024733768,358.52868430092747 1176.2356578495362,374.86533837169355 1249,382 C 1321.7643421504638,389.13466162830645 1380.8821710752318,387.06733081415325 1440,385 L 1440,700 L 0,700 Z" stroke="none" stroke-width="0" fill="#e68c3a" fill-opacity="0.53" class="transition-all duration-300 ease-in-out delay-150 path-2" transform="rotate(-180 720 350)">
+				</path>
+			<path d="M 0,700 L 0,525 C 88.18687736173135,534.1776021985572 176.3737547234627,543.3552043971143 242,549 C 307.6262452765373,554.6447956028857 350.6918584678805,556.7567846100997 401,537 C 451.3081415321195,517.2432153899003 508.85881140501544,475.6176571624871 582,473 C 655.1411885949846,470.3823428375129 743.8728959120575,506.772586739952 831,514 C 918.1271040879425,521.227413260048 1003.6496049467539,499.29199587770523 1063,497 C 1122.350395053246,494.70800412229477 1155.5286843009274,512.0594297492271 1214,520 C 1272.4713156990726,527.9405702507729 1356.2356578495364,526.4702851253865 1440,525 L 1440,700 L 0,700 Z" stroke="none" stroke-width="0" fill="#e68c3a" fill-opacity="1" class="transition-all duration-300 ease-in-out delay-150 path-3" transform="rotate(-180 720 350)"></path>
+		</svg> -->
+    <h2 class="self-start"><a href="/">{SITE_TITLE}</a></h2>
+    <div class="internal-links">
+      <HeaderLink href="/">Contact</HeaderLink>
+      <HeaderLink href="/about">About</HeaderLink>
+    </div>
+  </nav>
 </header>
 <style>
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
-	}
-	nav {
-		display: flex;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
+  h2 a,
+  h2 a.active {
+    text-decoration: none;
+  }
+  nav {
+    display: flex;
+  }
+  nav a {
+    padding: 1em 0.5em;
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+  }
+  nav a.active {
+    text-decoration: none;
+    @apply border-b-4 border-ttt-blue;
+  }
+  .social-links,
+  .social-links a {
+    display: flex;
+  }
+  @media (max-width: 720px) {
+    .social-links {
+      display: none;
+    }
+  }
 </style>

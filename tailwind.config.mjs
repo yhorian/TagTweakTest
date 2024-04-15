@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: 'selector',
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
@@ -10,8 +11,8 @@ export default {
         "off-white": "#d8d1bd",
         "ttt-orange": "#e68c3a",
         "ttt-blue": "#213e60",
-      },
+      },  
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography'),],
 };
