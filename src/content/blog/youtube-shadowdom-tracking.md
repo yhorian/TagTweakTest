@@ -10,7 +10,7 @@ Can't attach the YouTube API to a shadow DOM easily but you can call it manually
 
 ## Selecting the iFrame
 
-You'll need to find a way to consistently select the iFrame. When inside of a shadow root, you need to select to Parent and then access it's shadowRoot attribute. Inside of this you can make further query selector calls to ge to the iFrame.
+You’ll need to find a way to consistently select the iFrame. When inside a shadow root, you need to select the parent and then access its shadowRoot attribute. Inside this you can make further query selector calls to get to the iFrame.
 
 ``` js
 const iframe = document.querySelector('ns-video').shadowRoot.querySelector('iframe');
