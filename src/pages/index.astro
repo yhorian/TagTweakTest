@@ -4,9 +4,10 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import { getCollection } from 'astro:content';
+import PostCard from '../components/PostCard.astro';
 
 const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+        (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
@@ -17,12 +18,17 @@ const posts = (await getCollection('blog')).sort(
 	</head>
 	<body>
 		<Header />
-		<main class="">
-			<h1 class="mt-4 font-bold text-5xl">Welcome to Tag, Tweak, Test</h1>
-			<p class="mt-4">
-				All about coding in digital marketing - get tips on using tag managers, tests with dynamic content, and improving site performance. 🚀
-			</p>
-		</main>
+                <main>
+                        <h1 class="mt-4 font-bold text-5xl">Welcome to Tag, Tweak, Test</h1>
+                        <p class="mt-4">
+                                All about coding in digital marketing - get tips on using tag managers, tests with dynamic content, and improving site performance. 🚀
+                        </p>
+                        <div class="mt-8 grid gap-6 md:grid-cols-2">
+                                {posts.map((post) => (
+                                        <PostCard post={post} />
+                                ))}
+                        </div>
+                </main>
 		<Footer />
 	</body>
 </html>
