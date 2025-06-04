@@ -9,7 +9,7 @@ type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate } = Astro.props;
 ---
-<!-- This is the blog post layout. It frames the article with a fullbleed main, adds the title and hero image at the top -->
+<!-- Wraps articles with header and footer and displays the title with dates. -->
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} />
