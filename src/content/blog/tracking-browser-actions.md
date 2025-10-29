@@ -1,3 +1,4 @@
+
 ---
 title: 'Track browser actions: Reload/refresh, backwards, forwards'
 description: 'With the performance API, you can track browser actions such as reloads, forwards and backwards.'
