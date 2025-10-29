@@ -73,7 +73,7 @@
     }
 
     a:active,
-    active:active {
+    a.active {
         @apply brightness-110;
         @apply backdrop-brightness-110;
         @apply text-opacity-50;

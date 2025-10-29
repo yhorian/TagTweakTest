@@ -3,11 +3,11 @@
   "type": "module",
   "version": "0.0.2",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev": "npx astro dev",
+    "start": "npx astro dev",
+    "build": "npx astro build",
+    "preview": "npx astro preview",
+    "astro": "npx astro"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.0",
