@@ -12,6 +12,6 @@ Cardiff.marketing is a sister site to TagTweak, that has a few tips for your mar
 
 Cross domain tracking with GA4 is pretty easy, just setup the link then click a link:
 
-[https://cardiff.marketing]
+[https://cardiff.marketing](https://cardiff.marketing)
 
 Click and give it a go!
