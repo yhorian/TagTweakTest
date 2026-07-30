@@ -1,7 +1,11 @@
 {
     "name": "tagtweaktest",
     "compatibility_date": "2025-05-27",
+    "compatibility_flags": ["nodejs_compat"],
+    "main": "./dist/_worker.js/index.js",
     "assets": {
-        "directory": "./dist"
-    }
+        "directory": "./dist",
+        "binding": "ASSETS"
+    },
+    "send_email": [{ "name": "EMAIL", "remote": true }]
 }
