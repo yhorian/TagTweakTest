@@ -17,8 +17,8 @@ export const POST: APIRoute = async ({ request, locals }) => {
       text: `From: ${name} <${email}>\n\n${message}`,
     });
   } catch (error) {
-    return new Response(`${error.code}: ${error.message}`, { status: 502 });
+    return Response.redirect(new URL('/contact?error=1', request.url), 303);
   }
 
-  return new Response('Message sent');
+  return Response.redirect(new URL('/contact?sent=1', request.url), 303);
 };

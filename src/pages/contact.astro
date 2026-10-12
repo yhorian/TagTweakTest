@@ -2,6 +2,9 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+const sent = Astro.url.searchParams.has('sent');
+const error = Astro.url.searchParams.has('error');
 ---
 
 <!doctype html>
@@ -13,21 +16,30 @@ import Footer from '../components/Footer.astro';
     <Header />
     <main>
       <h1 class="mt-4 font-bold text-4xl">Contact Us</h1>
-      <form action="/api/contact" method="post" class="mt-6 flex flex-col max-w-xl gap-4">
-        <label>
-          <span class="block">Name</span>
-          <input type="text" name="name" required class="border p-2 w-full" />
-        </label>
-        <label>
-          <span class="block">Email</span>
-          <input type="email" name="email" required class="border p-2 w-full" />
-        </label>
-        <label>
-          <span class="block">Message</span>
-          <textarea name="message" required rows="5" class="border p-2 w-full"></textarea>
-        </label>
-        <button type="submit" class="bg-ttt-blue text-white p-2 rounded">Send</button>
-      </form>
+      {sent ? (
+        <p class="mt-6">Thanks for reaching out! We'll get back to you soon.</p>
+      ) : (
+        <>
+          {error && (
+            <p class="mt-6 text-red-600">Sorry, something went wrong sending your message. Please try again.</p>
+          )}
+          <form action="/api/contact" method="post" class="mt-6 flex flex-col max-w-xl gap-4">
+            <label>
+              <span class="block">Name</span>
+              <input type="text" name="name" required class="border p-2 w-full" />
+            </label>
+            <label>
+              <span class="block">Email</span>
+              <input type="email" name="email" required class="border p-2 w-full" />
+            </label>
+            <label>
+              <span class="block">Message</span>
+              <textarea name="message" required rows="5" class="border p-2 w-full"></textarea>
+            </label>
+            <button type="submit" class="bg-ttt-blue text-white p-2 rounded">Send</button>
+          </form>
+        </>
+      )}
     </main>
     <Footer />
   </body>
